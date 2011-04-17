@@ -1,0 +1,5 @@
+content	wenzit	content/ contentaccessible=yes
+locale	wenzit	en-US	locale/en-US/
+skin	wenzit	classic skin/
+overlay	chrome://browser/content/browser.xul	chrome://wenzit/content/firefoxOverlay.xul
+

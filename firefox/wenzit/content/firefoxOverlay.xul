@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://wenzit/skin/overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://wenzit/skin/calendar.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://wenzit/locale/wenzit.dtd">
+<overlay id="wenzit-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="chrome://wenzit/content/dateparse.js"/>
+	<script src="chrome://wenzit/content/wenzit.js"/>
+ 
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="wenzit-strings" src="chrome://wenzit/locale/wenzit.properties"/>
+	</stringbundleset>
+    
+	<popupset>
+        <menupopup id="rightclickpopup" >
+			<menuitem label="Find Dates" oncommand="wenzit.findDates(event);"/>
+			<menuitem label="Configure" />
+		</menupopup>	
+    </popupset>
+	
+	<statusbar id="status-bar">
+        <statusbarpanel class="statusbarpanel-menu-iconic" 
+						id="wenzit-icon"
+						context="rightclickpopup"
+						onclick="wenzit.findDates(event);"
+						tooltiptext="&wenzit.label;" 
+						src="chrome://wenzit/content/wenzit.jpg"  >
+        </statusbarpanel>
+	</statusbar>
+</overlay>

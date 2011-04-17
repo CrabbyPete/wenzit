@@ -1,0 +1,44 @@
+.calendar
+{
+	padding:0;
+	margin:0;
+	border:1px solid #888;
+	border-collapse:collapse;
+    background: #ffffff;
+    position:absolute;
+    opacity: 0.9;
+	cursor: pointer;
+    z-index: 10;
+	font-family: Tahoma, Arial, sans-serif;
+	text-align: center;
+	font-size: 11px;
+}
+.calendar caption
+{
+    font-weight:bold;
+    font-size:14px;
+	cursor: move;
+	width: auto;
+}
+.calendar thead
+{
+	
+    border-bottom: thin;
+    font-weight: bold;
+    color: #000000;
+    cursor: default;
+    
+}
+.calendar tfoot td
+{
+	font-weight: bolder;
+	color: #000000;
+}
+
+.calendar tbody td
+{
+	border:1px solid #aaa;
+	width:25px;
+	height:17px;
+}
+
