@@ -1,0 +1,11 @@
+Wenzit.net
+
+Wenzit is a Mozilla Firefox add-on that allows users to mark dates in any web page and store them as events in their 
+calendar, either Outlook using ical format or Google and Yahoo. ( Facebook is TBD ) 
+
+The dates are also stored on the Wenzit.net web page. You can view your calendar or look whats going on any day. 
+Lots of work had to be done, but for now enjoy
+
+firefox is the directory for the javascript for the  Firefox add-on.
+
+wenz is the directory for the Django server code. 
