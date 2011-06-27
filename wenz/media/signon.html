@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block head_js %}
+    <script type="text/javascript" src="/media/js/calendar.js"></script>
+{% endblock %}
+
+{% block  body_block %}
+	<div class="formContainer">
+		<h2 class="login">Login</h2>
+            {% if form.confirm %}
+            <form action="{% url sign_up %}" method="post" name="login" id="login">
+            {% else %}
+	        <form action="{% url sign_on %}" method="post" name="login" id="login">
+            {% endif %}
+				{{form.username.label}}{{ form.username }}{{form.username.errors}}<br \>
+				{{form.password.label}}{{ form.password }}{{form.password.errors}}<br \>
+                {{form.confirm.label}} {{ form.confirm  }}{{form.confirm.errors }}<br \>
+                {% if form.confirm %}
+                <input type="image" src="/media/img/btn-signup.gif" name="signup" title="signup" id="button" />
+                {% else %}
+				<input type="image" src="/media/img/btn-submit.gif" name="signin" title="submit" id="button" />
+                or
+                <input type="image" src="/media/img/btn-signup.gif" name="signup" title="signup" id="button" />
+                {% endif %}
+            </form>
+            or Login with
+            <div>
+                <a href="{% url facebook %}"><img src="/media/img/facebook.png" /> </a>
+                <a href="{% url google %}">  <img src="/media/img/google.gif"/> </a>
+            </div>
+    </div>
+{% endblock %}

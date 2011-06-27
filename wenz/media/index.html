@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block js %}
+    <link type=text/css href="/media/css/LightFace.css" rel="stylesheet" />
+    <script type="text/javascript" src="/media/js/LightFace.js"></script>
+    <script type="text/javascript" src="/media/js/LightFace.Request.js"></script>
+    <script type="text/javascript" src="/media/js/calendar.js"></script>
+{% endblock %}
+
+{% block body_block %}
+    <ul id="menu">
+        {%  if user.is_authenticated %}
+        <li id="signout">  <a href="{% url sign_out %}">Sign Out</a></li>
+        {% else %}
+		<li id="signup"> <a href="#" onclick="signOn('{% url sign_on %}')" >Sign On</a></li>
+        {% endif %}
+        <li id="about">  <a href="{% url about %}">About</a></li>
+		<li id="contact"><a href="#">Contact</a></li>
+	</ul>
+
+	<div id="page-calendar">
+		<div id=header>
+			<div id=web-title>
+			Wenzit.net
+			</div>
+		</div>
+
+		<div class="page-calendar" id="content">
+			<div id=calendar>
+			 	<h3>
+                    <img onclick="prevMonth();" src="/media/img/prev.png" />
+                    <span id=month> {{month}} </span>
+                    <img onclick="nextMonth();" src="/media/img/next.png" />
+                </h3>
+				<div id=days>
+					<ol class=labels>
+						<li>Sunday </li>
+						<li>Monday </li>
+						<li>Tuesday </li>
+						<li>Wednesday </li>
+						<li>Thursday </li>
+						<li>Friday </li>
+						<li>Saturday </li>
+					</ol>
+				</div>
+				<div id=boxes>
+				{{calendar|safe}}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

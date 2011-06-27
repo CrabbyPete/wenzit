@@ -1,0 +1,81 @@
+
+    h1	{
+		line-height:100%;
+		margin-top: 0;
+		margin-bottom: 0;
+        font-size: 12px;
+        font-weight: bold;
+	}
+
+	#heading {
+		text-align: center;
+		font: "Bookman Old Style";
+	}
+
+	#container
+	{
+		width: 800px;
+	}
+
+	#container label {
+		display:block;
+		margin:5px 0 0 0;
+		font-size:12px;
+		color:#000;
+		font-style:normal;
+	}
+
+	#googleMap
+	{
+		float: left;
+		width: 410px;
+		margin: 0 3% 0 0;
+		display: inline;
+	}
+
+	#map {
+		height:300px;
+		text-align:left;
+		width:400px;
+		float:right;
+		margin-bottom:5px;
+	}
+
+	#map_search {
+		width:400px;
+		text-align:left;
+		padding: 5px,0px,10px,0px;
+	}
+
+	.content
+	{
+		padding-bottom: 5px;
+	}
+
+	.content ul {
+		display: inline;
+		margin: auto;
+	}
+
+	.content li {
+        float: left;
+        list-style-type: none;
+        padding-right: 20px;
+	}
+
+	.content #submit {
+		float: left;
+		display:block;
+	}
+
+	.errorlist {
+		margin:2px 0 2px 0;
+		padding:0 10px 0 0;
+		float:right;
+		width:260px;
+		height:auto;
+		font-size:10px;
+		font-style:italic;
+		color:#e14f2c;
+		text-align:right;
+	}

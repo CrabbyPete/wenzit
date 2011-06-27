@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block js %}
+<!--
+    <link type=text/css href="/media/css/LightFace.css" rel="stylesheet" />
+    <script type="text/javascript" src="/media/js/LightFace.js"></script>
+    <script type="text/javascript" src="/media/js/LightFace.Request.js"></script>
+-->
+
+    <link type=text/css href="/media/css/colorbox.css" rel="stylesheet" />
+    <script type="text/javascript" src="/media/js/colorbox.js"></script>
+
+    <script type="text/javascript" src="/media/js/calendar.js"></script>
+{% endblock %}
+
+{% block body_block %}
+    <div class="show">
+        <table>
+        {% for event in events %}
+            <tr>
+                <td>
+                    {{ event.date|date:"d M Y" }}
+                </td>
+                <td>
+                    {{ event.start_time|time:"h:i A" }}
+                </td>
+                <td>
+                    <a class="details" href="{% url detail %}?pk={{event.pk}}&mk=1"> {{ event.title}} </a>
+                    <!--
+                    <a onclick="signOn('{% url detail %}?pk={{event.pk}}&mk=1')"> {{ event.title}} </a>
+                    -->
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}

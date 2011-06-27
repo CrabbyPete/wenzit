@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wenzit</title>
+    <link type="text/css" href="/media/css/style.css" rel="stylesheet" />
+    <link type="text/css" href="/media/css/detail.css" rel="stylesheet" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAw6ArS1eE_K0sprwtT178ZhQuXixCQLlJM6hxUueDSuie66HmwhQ8v5wVjacFYUxbP5tI08UcNOVBAw" type="text/javascript"></script>
+	<script type="text/javascript" src="/media/js/gmap.js"></script>
+</head>
+<body>
+	<div id='container' onunload="GUnload()">
+		<form method='post'>
+			<div id='googleMap'>
+				<img src="/media/img/blank.gif" onload="showLatLong( {{event.latitude}}, {{event.longitude}} )" alt='' />
+				<div id="map"><!-- Map goes here --></div>
+				<div class = 'map_search'>
+					{{event.address}}
+				</div>
+			</div>
+			<div class='content'>
+                <h4>{{event.title}}</h4>
+                Date:{{event.date}}<br />
+                Start Time:{{event.start_time}}<br />
+                End Time:{{event.end_time}}<br />
+                {{event.description}}<br />
+                <p>URL:<a href = "{{event.url}}" target = "_top">{{event.url}}</a></p>
+                <!--<input name="lati" type="hidden" />
+                <input name="lngi" type="hidden" /> -->
+                {% if owner %}
+                    <p><input id='submit' type="submit" value="Delete"/><p>
+                {% endif %}
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

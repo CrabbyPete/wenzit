@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Wenzit</title>
+<style type="text/css">
+	h1	{
+		line-height:100%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	#heading {
+		text-align: center;
+		font: "Bookman Old Style";
+	}
+
+	#container
+	{
+		width: 800px;
+	}
+
+	#container label {
+		display:block;
+		margin:5px 0 0 0;
+		font-size:12px;
+		color:#000;
+		font-style:normal;
+	}
+
+	#googleMap
+	{
+		float: left;
+		width: 410px;
+		margin: 0 3% 0 0;
+		display: inline;
+	}
+
+	#map {
+		height:300px;
+		text-align:left;
+		width:400px;
+		float:right;
+		margin-bottom:5px;
+	}
+
+	#map_search {
+		width:400px;
+		text-align:left;
+		padding: 5px,0px,10px,0px;
+	}
+
+	.content
+	{
+		padding-bottom: 5px;
+	}
+
+	.content ul {
+		display: inline;
+		margin: auto;
+	}
+
+	.content li {
+        float: left;
+        list-style-type: none;
+        padding-right: 20px;
+	}
+
+	.content #submit {
+		float: left;
+		display:block;
+	}
+
+	.errorlist {
+		margin:2px 0 2px 0;
+		padding:0 10px 0 0;
+		float:right;
+		width:260px;
+		height:auto;
+		font-size:10px;
+		font-style:italic;
+		color:#e14f2c;
+		text-align:right;
+	}
+	</style>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAw6ArS1eE_K0sprwtT178ZhRmAZHCeEM5c8kryck4e6uHwtI1ExSKJRR_fJeIb0qg1mJBCf88nmmhPg" type="text/javascript"></script>
+	<script type="text/javascript" src="/media/js/gmap.js"></script>
+</head>
+<body>
+	<div id='container'>
+		<form method='post' action={% url add_event %} >
+			<div id='googleMap'>
+				<img src="/media/img/blank.gif" onload="showAddress()" alt='' />
+
+				<div id="map"></div>
+				<div class = 'map_search'>
+					<label>Input address, hit Search, then drag the marker for more detail:</label>
+					{{form.address}}
+					<input type="button" value="Search" onClick="showAddress(this.form.address.value);"/>
+				</div>
+			</div>
+
+			<div class='content'>
+				<label>{{form.title.label}}</label> {{form.title}}{{form.title.errors}}
+				<label>{{form.date.label}}</label> {{form.date}}{{form.date.errors}}
+				<label>{{form.start_time.label}}</label> {{form.start_time}}{{form.start_time.errors}}
+				<label>{{form.end_time.label}}</label> {{form.end_time}}{{form.end_time.errors}}
+				<label>{{form.describe.label}}</label> {{form.describe}}{{form.describe.errors}}
+				<label>{{form.url.label}}</label> {{form.url}}{{form.url.errors}}
+				<label>{{form.mail.label}}</label> {{form.mail}}
+				<input name="lati" type="hidden" />
+				<input name="lngi" type="hidden" />
+				<input id='submit' type="submit" value="Submit"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
